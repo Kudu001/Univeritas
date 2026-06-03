@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Univeritas — Academic Management Platform</title>
+  <meta name="description" content="The all-in-one platform for universities and academic institutions. Manage submissions, detect plagiarism, and streamline workflows across every department." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366F1',
+            secondary: '#818CF8',
+            cta: '#10B981',
+            'cta-dark': '#059669',
+            surface: '#F5F3FF',
+            ink: '#1E1B4B',
+            'ink-muted': '#4338CA',
+            'ink-light': '#6B7280',
+          },
+          fontFamily: {
+            serif: ['"EB Garamond"', 'Georgia', 'serif'],
+            'serif-alt': ['"Crimson Text"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body class="bg-white text-ink font-sans antialiased">
+
+  <!-- NAV -->
+  <header class="fixed top-4 left-4 right-4 z-50">
+    <nav class="max-w-6xl mx-auto bg-white border border-gray-200 rounded-2xl px-5 py-3 flex items-center justify-between shadow-sm" role="navigation" aria-label="Main navigation">
+      <a href="#" class="flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-lg">
+        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0" aria-hidden="true">
+          <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <span class="font-serif text-xl font-bold text-ink">Univeritas</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-light" role="list">
+        <li><a href="#features" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">Features</a></li>
+        <li><a href="#how-it-works" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">How it works</a></li>
+        <li><a href="#pricing" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">Pricing</a></li>
+        <li><a href="#faq" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">FAQ</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="#" class="hidden sm:block text-sm font-medium text-ink hover:text-primary transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded px-2 py-1">Sign in</a>
+        <a href="#cta" class="bg-primary text-white text-sm font-medium px-4 py-2 rounded-xl hover:bg-indigo-700 transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none focus-visible:ring-offset-2">Get started free</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="pt-36 pb-24 px-4 sm:px-6 lg:px-8 bg-surface" aria-labelledby="hero-heading">
+      <div class="max-w-6xl mx-auto">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 bg-white border border-indigo-200 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg>
+            Now with AI-powered plagiarism detection
+          </div>
+          <h1 id="hero-heading" class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-ink leading-tight mb-6">
+            The academic<br />platform built for<br /><em class="not-italic text-primary">serious institutions.</em>
+          </h1>
+          <p class="text-lg text-ink-light leading-relaxed mb-10 max-w-xl font-serif-alt">
+            Univeritas streamlines submission management, plagiarism detection, group oversight, and audit trails — everything your institution needs in one place.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#cta" class="inline-flex items-center gap-2 bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:outline-none min-h-[44px]">
+              Start for free
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#how-it-works" class="inline-flex items-center gap-2 bg-white border border-gray-200 hover:border-primary hover:text-primary text-ink font-semibold px-6 py-3 rounded-xl transition-colors duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none min-h-[44px]">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              See how it works
+            </a>
+          </div>
+          <p class="mt-5 text-sm text-ink-light">No credit card required &middot; Free 30-day trial</p>
+        </div>
+
+        <!-- Dashboard mockup -->
+        <div class="mt-16 bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm" role="img" aria-label="Univeritas dashboard preview">
+          <div class="bg-gray-50 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-400" aria-hidden="true"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-400" aria-hidden="true"></div>
+            <div class="w-3 h-3 rounded-full bg-green-400" aria-hidden="true"></div>
+            <div class="ml-4 flex-1 max-w-xs bg-white border border-gray-200 rounded-md px-3 py-1 text-xs text-gray-400 font-sans">app.univeritas.edu</div>
+          </div>
+          <div class="p-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="sm:col-span-1 space-y-2">
+              <div class="h-8 bg-surface rounded-lg w-3/4"></div>
+              <div class="h-4 bg-gray-100 rounded w-full"></div>
+              <div class="h-4 bg-gray-100 rounded w-5/6"></div>
+              <div class="h-4 bg-indigo-100 rounded w-4/5"></div>
+              <div class="h-4 bg-gray-100 rounded w-full"></div>
+              <div class="mt-4 space-y-2">
+                <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-cta"></div><div class="h-3 bg-gray-100 rounded flex-1"></div></div>
+                <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-primary"></div><div class="h-3 bg-gray-100 rounded flex-1"></div></div>
+                <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-gray-300"></div><div class="h-3 bg-gray-100 rounded flex-1"></div></div>
+              </div>
+            </div>
+            <div class="sm:col-span-2 space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="h-6 bg-surface rounded w-40"></div>
+                <div class="h-6 bg-primary rounded-lg w-20"></div>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-surface rounded-xl p-3 space-y-1.5">
+                  <div class="h-3 bg-indigo-200 rounded w-1/2"></div>
+                  <div class="h-7 bg-primary rounded w-16"></div>
+                  <div class="h-2 bg-indigo-100 rounded w-3/4"></div>
+                </div>
+                <div class="bg-emerald-50 rounded-xl p-3 space-y-1.5">
+                  <div class="h-3 bg-emerald-200 rounded w-1/2"></div>
+                  <div class="h-7 bg-cta rounded w-20"></div>
+                  <div class="h-2 bg-emerald-100 rounded w-3/4"></div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div class="h-3 bg-gray-100 rounded w-full"></div>
+                <div class="h-3 bg-gray-100 rounded w-5/6"></div>
+                <div class="h-3 bg-indigo-100 rounded w-4/5"></div>
+                <div class="h-3 bg-gray-100 rounded w-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social proof bar -->
+        <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink-light">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-cta" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Trusted by 200+ universities
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-cta" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            2M+ submissions processed
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-cta" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            SOC 2 Type II certified
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-cta" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            99.9% uptime SLA
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-24 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="features-heading">
+      <div class="max-w-6xl mx-auto">
+        <div class="max-w-2xl mb-16">
+          <p class="text-primary font-semibold text-sm mb-3 uppercase tracking-widest">Features</p>
+          <h2 id="features-heading" class="font-serif text-4xl sm:text-5xl font-bold text-ink mb-4">Everything your institution needs</h2>
+          <p class="text-ink-light font-serif-alt text-lg leading-relaxed">Built for registrars, deans, faculty, and students — Univeritas handles the complexity so you can focus on education.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Feature card -->
+          <article class="bg-surface border border-indigo-100 rounded-2xl p-6 hover:border-primary transition-colors duration-200 cursor-default">
+            <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-ink mb-2">Submission Management</h3>
+            <p class="text-ink-light text-sm leading-relaxed">Handle assignments, dissertations, and research submissions with deadline tracking, versioning, and batch operations.</p>
+          </article>
+
+          <article class="bg-surface border border-indigo-100 rounded-2xl p-6 hover:border-primary transition-colors duration-200 cursor-default">
+            <div class="w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-ink mb-2">Plagiarism Detection</h3>
+            <p class="text-ink-light text-sm leading-relaxed">AI-powered similarity analysis across billions of sources. Real-time reports with highlighted matches and similarity scores.</p>
+          </article>
+
+          <article class="bg-surface border border-indigo-100 rounded-2xl p-6 hover:border-primary transition-colors duration-200 cursor-default">
+            <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-ink mb-2">Groups & Departments</h3>
+            <p class="text-ink-light text-sm leading-relaxed">Organize students, staff, and faculty into groups by department, cohort, or program with granular role-based permissions.</p>
+          </article>
+
+          <article class="bg-surface border border-indigo-100 rounded-2xl p-6 hover:border-primary transition-colors duration-200 cursor-default">
+            <div class="w-10 h-10 bg-violet-500 rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-ink mb-2">Institution Management</h3>
+            <p class="text-ink-light text-sm leading-relaxed">Manage multiple faculties, programs, and campuses from a single admin dashboard with hierarchical access control.</p>
+          </article>
+
+          <article class="bg-surface border border-indigo-100 rounded-2xl p-6 hover:border-primary transition-colors duration-200 cursor-default">
+            <div class="w-10 h-10 bg-cta rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-ink mb-2">Smart Notifications</h3>
+            <p class="text-ink-light text-sm leading-relaxed">Automated alerts for deadlines, submission status changes, plagiarism alerts, and admin events — via email or in-app.</p>
+          </article>
+
+          <article class="bg-surface border border-indigo-100 rounded-2xl p-6 hover:border-primary transition-colors duration-200 cursor-default">
+            <div class="w-10 h-10 bg-slate-700 rounded-xl flex items-center justify-center mb-4" aria-hidden="true">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-ink mb-2">Full Audit Trail</h3>
+            <p class="text-ink-light text-sm leading-relaxed">Immutable, timestamped logs of every action taken on submissions, accounts, and admin settings — built for compliance.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-24 px-4 sm:px-6 lg:px-8 bg-surface" aria-labelledby="hiw-heading">
+      <div class="max-w-6xl mx-auto">
+        <div class="max-w-2xl mb-16">
+          <p class="text-primary font-semibold text-sm mb-3 uppercase tracking-widest">How it works</p>
+          <h2 id="hiw-heading" class="font-serif text-4xl sm:text-5xl font-bold text-ink mb-4">Up and running in minutes</h2>
+          <p class="text-ink-light font-serif-alt text-lg leading-relaxed">No lengthy onboarding. Import your existing data and start managing submissions on day one.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="relative">
+            <div class="hidden md:block absolute top-5 left-full w-full h-px bg-indigo-200 -translate-x-4" aria-hidden="true"></div>
+            <div class="w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-sm mb-5 font-sans" aria-label="Step 1">1</div>
+            <h3 class="font-serif text-xl font-bold text-ink mb-2">Set up your institution</h3>
+            <p class="text-ink-light text-sm leading-relaxed">Create your institution profile, import departments, and invite faculty — all from the admin panel in under 15 minutes.</p>
+          </div>
+          <div class="relative">
+            <div class="hidden md:block absolute top-5 left-full w-full h-px bg-indigo-200 -translate-x-4" aria-hidden="true"></div>
+            <div class="w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-sm mb-5 font-sans" aria-label="Step 2">2</div>
+            <h3 class="font-serif text-xl font-bold text-ink mb-2">Students submit work</h3>
+            <p class="text-ink-light text-sm leading-relaxed">Students access a clean submission portal. Uploads trigger instant plagiarism scans and notify assigned reviewers automatically.</p>
+          </div>
+          <div>
+            <div class="w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-sm mb-5 font-sans" aria-label="Step 3">3</div>
+            <h3 class="font-serif text-xl font-bold text-ink mb-2">Review and act</h3>
+            <p class="text-ink-light text-sm leading-relaxed">Faculty review flagged submissions with detailed similarity reports. Every decision is logged in the tamper-proof audit trail.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-white" aria-label="Testimonials">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <figure class="bg-surface border border-indigo-100 rounded-2xl p-6">
+            <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote>
+              <p class="text-ink font-serif-alt text-base leading-relaxed mb-4">"Univeritas replaced three separate tools we were using. The plagiarism detection alone saves our faculty 20 hours per semester."</p>
+            </blockquote>
+            <figcaption class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-indigo-200 flex items-center justify-center text-primary font-bold text-sm font-sans" aria-hidden="true">SA</div>
+              <div>
+                <p class="text-sm font-semibold text-ink">Dr. Sarah Adeyemi</p>
+                <p class="text-xs text-ink-light">Dean of Sciences, University of Lagos</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="bg-surface border border-indigo-100 rounded-2xl p-6">
+            <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote>
+              <p class="text-ink font-serif-alt text-base leading-relaxed mb-4">"The audit trail was the deciding factor for us. When compliance comes knocking, we have a complete, tamper-proof record of everything."</p>
+            </blockquote>
+            <figcaption class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-emerald-200 flex items-center justify-center text-cta-dark font-bold text-sm font-sans" aria-hidden="true">MK</div>
+              <div>
+                <p class="text-sm font-semibold text-ink">Prof. Marcus Klein</p>
+                <p class="text-xs text-ink-light">Registrar, TU Berlin</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="bg-surface border border-indigo-100 rounded-2xl p-6">
+            <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote>
+              <p class="text-ink font-serif-alt text-base leading-relaxed mb-4">"Our student submission rate went from 73% to 96% within one semester. The portal is just that much easier to use than what we had before."</p>
+            </blockquote>
+            <figcaption class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-sm font-sans" aria-hidden="true">FO</div>
+              <div>
+                <p class="text-sm font-semibold text-ink">Fatima Osei</p>
+                <p class="text-xs text-ink-light">Head of IT, Ashesi University</p>
+              </div>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-24 px-4 sm:px-6 lg:px-8 bg-surface" aria-labelledby="pricing-heading">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <p class="text-primary font-semibold text-sm mb-3 uppercase tracking-widest">Pricing</p>
+          <h2 id="pricing-heading" class="font-serif text-4xl sm:text-5xl font-bold text-ink mb-4">Simple, transparent pricing</h2>
+          <p class="text-ink-light font-serif-alt text-lg leading-relaxed">No per-user fees. Pay for your institution, not for every student account.</p>
+          <div class="inline-flex items-center gap-3 mt-6 bg-white border border-gray-200 rounded-xl p-1 text-sm font-medium">
+            <button class="px-4 py-2 rounded-lg bg-primary text-white cursor-pointer transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none min-h-[36px]" aria-pressed="true">Annual <span class="ml-1 text-xs bg-white/20 text-white px-1.5 py-0.5 rounded">Save 25%</span></button>
+            <button class="px-4 py-2 rounded-lg text-ink-light hover:text-ink cursor-pointer transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none min-h-[36px]" aria-pressed="false">Monthly</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+
+          <!-- Starter -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <p class="text-sm font-semibold text-ink-light mb-1">Starter</p>
+            <div class="flex items-end gap-1 mb-1">
+              <span class="font-serif text-4xl font-bold text-ink">$199</span>
+              <span class="text-ink-light text-sm mb-1">/mo</span>
+            </div>
+            <p class="text-xs text-ink-light mb-6">Billed annually &middot; up to 500 students</p>
+            <a href="#cta" class="block w-full text-center bg-white border border-primary text-primary font-semibold py-2.5 rounded-xl hover:bg-surface transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none focus-visible:ring-offset-2 mb-6 min-h-[44px] flex items-center justify-center">Get started</a>
+            <ul class="space-y-3 text-sm" role="list">
+              <li class="flex items-center gap-2.5 text-ink"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Up to 500 student accounts</li>
+              <li class="flex items-center gap-2.5 text-ink"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Submission management</li>
+              <li class="flex items-center gap-2.5 text-ink"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Plagiarism detection (1,000 checks/mo)</li>
+              <li class="flex items-center gap-2.5 text-ink"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Groups &amp; departments</li>
+              <li class="flex items-center gap-2.5 text-ink-light"><svg class="w-4 h-4 text-gray-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span class="text-gray-400">Advanced audit trail</span></li>
+              <li class="flex items-center gap-2.5 text-ink-light"><svg class="w-4 h-4 text-gray-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span class="text-gray-400">SSO / SAML</span></li>
+            </ul>
+          </div>
+
+          <!-- Pro (highlighted) -->
+          <div class="bg-ink border-2 border-primary rounded-2xl p-6 relative">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+              <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Most popular</span>
+            </div>
+            <p class="text-sm font-semibold text-secondary mb-1">Pro</p>
+            <div class="flex items-end gap-1 mb-1">
+              <span class="font-serif text-4xl font-bold text-white">$499</span>
+              <span class="text-indigo-300 text-sm mb-1">/mo</span>
+            </div>
+            <p class="text-xs text-indigo-300 mb-6">Billed annually &middot; up to 5,000 students</p>
+            <a href="#cta" class="block w-full text-center bg-primary text-white font-semibold py-2.5 rounded-xl hover:bg-indigo-700 transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-ink mb-6 min-h-[44px] flex items-center justify-center">Get started</a>
+            <ul class="space-y-3 text-sm" role="list">
+              <li class="flex items-center gap-2.5 text-white"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Up to 5,000 student accounts</li>
+              <li class="flex items-center gap-2.5 text-white"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Submission management</li>
+              <li class="flex items-center gap-2.5 text-white"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Plagiarism detection (unlimited)</li>
+              <li class="flex items-center gap-2.5 text-white"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Groups &amp; departments</li>
+              <li class="flex items-center gap-2.5 text-white"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Full audit trail &amp; compliance logs</li>
+              <li class="flex items-center gap-2.5 text-white"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Priority support</li>
+            </ul>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <p class="text-sm font-semibold text-ink-light mb-1">Enterprise</p>
+            <div class="flex items-end gap-1 mb-1">
+              <span class="font-serif text-4xl font-bold text-ink">Custom</span>
+            </div>
+            <p class="text-xs text-ink-light mb-6">Unlimited students &middot; dedicated infrastructure</p>
+            <a href="#cta" class="block w-full text-center bg-ink border border-ink text-white font-semibold py-2.5 rounded-xl hover:bg-gray-800 transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:ring-gray-800 focus-visible:outline-none focus-visible:ring-offset-2 mb-6 min-h-[44px] flex items-center justify-center">Contact sales</a>
+            <ul class="space-y-3 text-sm" role="list">
+              <li class="flex items-center gap-2.5 text-ink"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Unlimited students &amp; faculty</li>
+              <li class="flex items-center gap-2.5 text-ink"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Everything in Pro</li>
+              <li class="flex items-center gap-2.5 text-ink"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>SSO / SAML integration</li>
+              <li class="flex items-center gap-2.5 text-ink"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>On-premise deployment option</li>
+              <li class="flex items-center gap-2.5 text-ink"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Dedicated account manager</li>
+              <li class="flex items-center gap-2.5 text-ink"><svg class="w-4 h-4 text-cta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Custom SLA &amp; 24/7 support</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="faq-heading">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-primary font-semibold text-sm mb-3 uppercase tracking-widest">FAQ</p>
+          <h2 id="faq-heading" class="font-serif text-4xl sm:text-5xl font-bold text-ink">Common questions</h2>
+        </div>
+        <dl class="space-y-4">
+          <div class="border border-gray-200 rounded-2xl overflow-hidden">
+            <dt>
+              <button class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-ink hover:text-primary transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none min-h-[44px]" aria-expanded="true">
+                How does the plagiarism detection work?
+                <svg class="w-5 h-5 flex-shrink-0 text-ink-light rotate-180 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </dt>
+            <dd class="px-6 pb-4 text-ink-light text-sm leading-relaxed font-serif-alt">
+              Each submitted document is processed by our AI engine against a database of academic papers, web content, and previously submitted work within your institution. You receive a similarity score plus a highlighted report showing matched passages and their sources, typically within 60 seconds.
+            </dd>
+          </div>
+          <div class="border border-gray-200 rounded-2xl overflow-hidden">
+            <dt>
+              <button class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-ink hover:text-primary transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none min-h-[44px]" aria-expanded="false">
+                Can we import our existing student and faculty data?
+                <svg class="w-5 h-5 flex-shrink-0 text-ink-light transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </dt>
+            <dd class="px-6 pb-4 text-ink-light text-sm leading-relaxed font-serif-alt hidden">
+              Yes. We support bulk CSV import for students, faculty, and departments. Enterprise customers can use our REST API or LDAP/Active Directory sync for automated provisioning.
+            </dd>
+          </div>
+          <div class="border border-gray-200 rounded-2xl overflow-hidden">
+            <dt>
+              <button class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-ink hover:text-primary transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none min-h-[44px]" aria-expanded="false">
+                Is student data secure and GDPR compliant?
+                <svg class="w-5 h-5 flex-shrink-0 text-ink-light transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </dt>
+            <dd class="px-6 pb-4 text-ink-light text-sm leading-relaxed font-serif-alt hidden">
+              Univeritas is SOC 2 Type II certified and GDPR compliant. All data is encrypted at rest and in transit. We never share or sell student data. EU institutions can choose EU-only data residency.
+            </dd>
+          </div>
+          <div class="border border-gray-200 rounded-2xl overflow-hidden">
+            <dt>
+              <button class="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-ink hover:text-primary transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none min-h-[44px]" aria-expanded="false">
+                What happens after the 30-day trial ends?
+                <svg class="w-5 h-5 flex-shrink-0 text-ink-light transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+            </dt>
+            <dd class="px-6 pb-4 text-ink-light text-sm leading-relaxed font-serif-alt hidden">
+              Your data is never deleted. If you choose not to subscribe, your account moves to a read-only state so you can export everything. No surprise charges — we'll remind you 7 days before the trial ends.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="py-24 px-4 sm:px-6 lg:px-8 bg-ink" aria-labelledby="cta-heading">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 id="cta-heading" class="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">Start your free trial today</h2>
+        <p class="text-indigo-300 font-serif-alt text-lg leading-relaxed mb-10">Join 200+ institutions already using Univeritas. No credit card, no lock-in — just a better way to manage academic work.</p>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate aria-label="Free trial sign-up">
+          <label for="email" class="sr-only">Work email address</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Your work email"
+            autocomplete="email"
+            required
+            class="flex-1 bg-white/10 border border-white/20 text-white placeholder-indigo-300 px-4 py-3 rounded-xl focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none text-sm min-h-[44px]"
+          />
+          <button
+            type="submit"
+            class="bg-cta hover:bg-cta-dark text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-ink focus-visible:outline-none whitespace-nowrap min-h-[44px]"
+          >
+            Get free trial
+          </button>
+        </form>
+        <p class="mt-4 text-xs text-indigo-400">30-day free trial &middot; No credit card &middot; Cancel anytime</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
+        <div class="col-span-2">
+          <a href="#" class="flex items-center gap-2 mb-3 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded-lg w-fit">
+            <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <span class="font-serif text-xl font-bold text-ink">Univeritas</span>
+          </a>
+          <p class="text-sm text-ink-light leading-relaxed max-w-xs">The academic management platform built for institutions that take integrity seriously.</p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-ink uppercase tracking-widest mb-3">Product</p>
+          <ul class="space-y-2 text-sm text-ink-light" role="list">
+            <li><a href="#features" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">Features</a></li>
+            <li><a href="#pricing" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">Pricing</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-ink uppercase tracking-widest mb-3">Company</p>
+          <ul class="space-y-2 text-sm text-ink-light" role="list">
+            <li><a href="#" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">About</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">Blog</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-ink uppercase tracking-widest mb-3">Legal</p>
+          <ul class="space-y-2 text-sm text-ink-light" role="list">
+            <li><a href="#" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">Privacy</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">Terms</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none rounded">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-ink-light">
+        <p>&copy; 2026 Univeritas. All rights reserved.</p>
+        <p>Built with integrity, for integrity.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('[aria-expanded]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true'
+        btn.setAttribute('aria-expanded', String(!isOpen))
+        const dd = btn.closest('div').nextElementSibling
+        if (dd) dd.classList.toggle('hidden', isOpen)
+        const icon = btn.querySelector('svg')
+        if (icon) icon.classList.toggle('rotate-180', !isOpen)
+      })
+    })
+  </script>
+
+</body>
+</html>
